@@ -15,7 +15,7 @@ words_array = np.array(words).reshape(-1, 1)
 print(words_array)
 
 # create object of one hot encoder
-encoder = OneHotEncoder(sparse_output=False)
+encoder = OneHotEncoder(sparse_output=True)
 
 encoded = encoder.fit_transform(words_array)
 

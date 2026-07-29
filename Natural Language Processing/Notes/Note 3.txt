@@ -60,8 +60,16 @@ Advantages of One-Hot Encoding
 - Commonly used as a basic text representation technique.
 
 Disadvantages of One-Hot Encoding
--Produces very large vectors when the vocabulary is large.
-- Most vector values are 0, making the vectors sparse.
-- Does not capture the meaning or semantic relationship between words.
-- Words such as King and Queen are treated as completely unrelated.
-- Requires more memory for large datasets.
+1. Creates Sparse Matrices
+    One-Hot Encoding generates many columns, most of which contain 0s.
+    This results in a sparse matrix, which can increase memory usage and may lead to overfitting in some machine learning models.
+2. Increases Input Size
+    If a categorical feature has many unique values, One-Hot Encoding creates one new column for each category.
+    This significantly increases the number of input features (high dimensionality), making training slower and requiring more computational resources.
+3. Does Not Capture Semantic Meaning
+    One-Hot Encoding treats every category as completely independent.
+    It does not represent any relationship or similarity between categories.
+    Example: "Cat" and "Tiger" are encoded as equally different as "Cat" and "Car".
+4. Out-of-Vocabulary (OOV) Problem
+    If a new category appears during testing or prediction that was not present during training, the encoder cannot represent it correctly.
+    This is known as the Out-of-Vocabulary (OOV) problem.
